@@ -1,16 +1,157 @@
-# React + Vite
+# ⚠️ STILL IN PROGRESS ⚠️
+# 🌸 Planner Widget
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A kawaii-themed, AI-powered productivity widget for planning your goals — built with React + Vite. Supports 4 pastel themes, inline editing, and an AI onboarding flow that reads your syllabus PDFs and generates a personalized plan using the Claude API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **AI onboarding** — upload your syllabi, enter your goals and schedule constraints, and Claude generates a fully personalized plan
+- **4 pastel themes** — Light, Dark, Cool, and Warm, all derived from a consistent kawaii color palette
+- **Monthly phases** — 4-phase summer breakdown with clickable detail cards
+- **Goal buckets** — organized view of your goals with inline editable items
+- **Sample week** — a generated weekly schedule template based on your availability
+- **Calendar tab** — deadlines, milestones, and events extracted from your syllabi, color-coded by type
+- **Persistent edits** — all changes saved to localStorage so nothing is lost on refresh
+- **Embeddable widget** — deploy to Vercel and embed anywhere via `<iframe>`
+- **Mac desktop widget** — compatible with Übersicht for live desktop background display
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Layer | Tool |
+|---|---|
+| Framework | React + Vite |
+| Styling | CSS custom properties (theme system) |
+| Persistence | localStorage |
+| AI | Anthropic Claude API (BYOK) |
+| Deployment | Vercel |
+| Desktop widget | Übersicht (optional) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- An [Anthropic API key](https://console.anthropic.com/) (for the AI onboarding feature)
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/meaganalfaro/planning-widget.git
+cd planning-widget
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+### First Run
+
+On first load, the app will walk you through a 3-step onboarding flow:
+
+1. **Goals** — enter your target roles and summer goals
+2. **Upload** — upload your course syllabi as PDFs
+3. **Schedule** — enter your weekly availability and constraints
+
+You'll be prompted to enter your Anthropic API key (stored locally in your browser — never sent anywhere except directly to Anthropic's API).
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+  components/
+    WindowChrome.jsx       # Title bar with traffic light dots
+    TabBar.jsx             # Tab navigation
+    tabs/
+      PhasesTab.jsx        # Monthly phases view
+      BucketsTab.jsx       # Goal buckets view
+      WeekTab.jsx          # Weekly schedule view
+      CalendarTab.jsx      # Calendar with extracted deadlines
+  data/
+    defaults.js            # Fallback data if user skips onboarding
+    schema.js              # JSON schema sent to Claude
+  hooks/
+    useLocalStorage.js     # Persistent state hook
+  themes/
+    themes.js              # 4 theme color objects
+  onboarding/
+    Onboarding.jsx         # Multi-step onboarding container
+    Step1Goals.jsx         # Goals + target roles form
+    Step2Upload.jsx        # PDF syllabus upload
+    Step3Schedule.jsx      # Availability + constraints form
+  App.jsx                  # Root — routes between onboarding and widget
+  index.css
+```
+
+---
+
+## 🎨 Themes
+
+| Theme | Background | Accent | Vibe |
+|---|---|---|---|
+| Light | Butter yellow `#F7F5DC` | Pink `#FFB3D9` | Soft and warm |
+| Dark | Chocolate `#1C0C05` | Pink `#FFB3D9` | Cozy night mode |
+| Cool | Baby blue `#D6F0FA` | Lavender `#C8A8E8` | Calm and focused |
+| Warm | Blush pink `#FFD6EC` | Cream `#EDEAA0` | Bright and cheerful |
+
+---
+
+## 🖥 Embedding as a Widget
+
+### Anywhere (iframe)
+
+After deploying to Vercel:
+
+```html
+<iframe
+  src="https://your-app.vercel.app"
+  width="720"
+  height="600"
+  frameborder="0"
+/>
+```
+
+Works in Notion, personal sites, GitHub Pages, anywhere that supports iframes.
+
+### Mac Desktop (Übersicht)
+
+1. Install [Übersicht](https://tracesof.net/uebersicht/)
+2. Place the built `index.html` (or point to your Vercel URL) in your Übersicht widgets folder
+3. The planner will render live on your desktop background
+
+---
+
+## 🗺 Roadmap
+
+- [x] Project scaffold + folder structure
+- [ ] Theme system with CSS custom properties
+- [ ] `useLocalStorage` hook
+- [ ] Onboarding multi-step form
+- [ ] PDF upload + base64 conversion
+- [ ] Claude API integration (BYOK)
+- [ ] Phases, Buckets, Week tabs
+- [ ] Calendar tab with deadline extraction
+- [ ] Conflict detection (overlapping deadlines + prep weeks)
+- [ ] "Copy embed code" button inside widget
+- [ ] Übersicht desktop widget config
+- [ ] Native macOS WidgetKit version (stretch)
+
+---
+
+## 👩‍💻 Author
+
+Built by **Meagan Alfaro** — M.S. Cybersecurity student at FIU.
+
+---

@@ -1,4 +1,3 @@
-import {themes} from '../themes/themes';
 
 const buttonStyle = {
     width: '11px',

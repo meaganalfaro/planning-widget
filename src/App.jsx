@@ -3,6 +3,7 @@ import { themes } from './themes/themes';
 import WindowChrome from './components/WindowChrome';
 import TabBar from './components/TabBar';
 import { useState } from 'react';
+import PhasesTab from './components/tabs/PhasesTab';
 
 export default function App() {
   const [plan, setPlan] = useLocalStorage('plan', {}); // change back to null later, just for testing purposes
@@ -20,6 +21,13 @@ export default function App() {
     '--design': theme.design,
   };
 
+  const tabComponents = {
+    phases: <PhasesTab />,
+    buckets: <p style={{ color: 'var(--letters)' }}>buckets coming soon</p>,
+    week: <p style={{ color: 'var(--letters)' }}>week coming soon</p>,
+    calendar: <p style={{ color: 'var(--letters)' }}>calendar coming soon</p>,
+  };
+
   if (!plan) {
     return (
       <div style={{...themeVars, background: 'var(--primary)', minHeight: '100vh'}}>
@@ -30,11 +38,11 @@ export default function App() {
   }
 
   return (
-    <div style={{...themeVars, background: 'var(--primary)', minHeight: '100vh'}}>
+    <div style={{...themeVars, background: 'var(--primary)', minHeight: '100vh', borderRadius: '20px 20px 0 0' }}>
       {/* planner widget goes here later */}
       <WindowChrome title="planner ⋅˚₊‧ ୨୧ ‧₊˚ ⋅"/>
       <TabBar activeTab={activeTab} setActiveTab={setActiveTab}/>
-      <p style={{ color: 'var(--letters)' }}>widget placeholder</p>
+      {tabComponents[activeTab]}
     </div>
   );
 }

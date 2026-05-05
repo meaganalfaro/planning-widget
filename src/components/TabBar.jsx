@@ -1,8 +1,8 @@
 const buttonStyle = {
     margin: '0.5rem',
     padding: '0.5rem 1rem',
-    borderRadius: '5px',
-    border: 'var(--letters) solid 1px',
+    borderRadius: '7px',
+    border: 'var(--letters) solid 0.5px',
     cursor: 'pointer',
     fontWeight: '800',
     color: 'var(--letters)',

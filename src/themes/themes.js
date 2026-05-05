@@ -8,6 +8,7 @@ export const themes = {
         design: '#5e4632'
     },
 
+    //needs work
     light: {
         primary: '#ff92c4',
         secondary: '#ffa7cf',
@@ -17,6 +18,7 @@ export const themes = {
         design: '#ffd3e7'
     },
 
+    //needs work
     cool: {
         primary: '#b5e6f0',
         secondary: '#c3ebf3',
@@ -27,6 +29,7 @@ export const themes = {
 
     },
 
+    //needs work
     warm: {
         primary: '#f2e8a8',
         secondary: '#f4ecb9',

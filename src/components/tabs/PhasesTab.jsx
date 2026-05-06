@@ -40,7 +40,7 @@ export default function PhasesTab() {
                             borderColor: `transparent var(--secondary) transparent transparent`,
                             borderRadius: '0 3px  0',
                         }} />
-                        <p style={{textAlign:'left'}}>{phase.name}</p>
+                        <p style={{textAlign:'left', color:'var(--letters)'}}>{phase.name}</p>
                         <p style={{ color: 'var(--title)', fontWeight: 800, textAlign:'left'}}>{phase.title}</p>
                         <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
                             {phase.tags.map((tag, index) => (
@@ -48,7 +48,8 @@ export default function PhasesTab() {
                                     color: 'var(--primary)',
                                     background: 'var(--accent)',
                                     borderRadius: '7px',
-                                    padding: '0.25rem 0.5rem'
+                                    padding: '0.25rem 0.5rem',
+                                    fontWeight: 600,
                                 }}>
                                     {tag}
                                 </span>
@@ -60,7 +61,7 @@ export default function PhasesTab() {
 
             {/* detail below */}
             <div style={InfoCard}>
-                <p>{selectedPhase.name}</p>
+                <p style={{color: 'var(--title)'}} >{selectedPhase.name}</p>
                     {selectedPhase.items.map((item, index) => (
                         <p style={{color: 'var(--letters)'}} key={index}>{item}</p>
                     ))}

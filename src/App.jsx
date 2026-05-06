@@ -8,7 +8,7 @@ import PhasesTab from './components/tabs/PhasesTab';
 export default function App() {
   const [plan, setPlan] = useLocalStorage('plan', {}); // change back to null later, just for testing purposes
   const [apiKey, setApiKey] = useLocalStorage('apiKey', null);
-  const [themeName, setThemeName] = useLocalStorage('theme', 'dark');
+  const [themeName, setThemeName] = useLocalStorage('theme', 'cool');
   const [activeTab, setActiveTab] = useState('phases');
   const theme = themes[themeName];
 
@@ -38,7 +38,14 @@ export default function App() {
   }
 
   return (
-    <div style={{...themeVars, background: 'var(--primary)', minHeight: '100vh', borderRadius: '20px 20px 0 0' }}>
+    <div style={{
+      ...themeVars,
+      background: 'var(--primary)',
+      minHeight: '100vh',
+      backgroundImage: `radial-gradient(circle, var(--design) 1.5px, transparent 1.5px)`,
+      backgroundSize: '35px 35px',
+      borderRadius: '30px 30x 0 0'
+  }}>
       {/* planner widget goes here later */}
       <WindowChrome title="planner ⋅˚₊‧ ୨୧ ‧₊˚ ⋅"/>
       <TabBar activeTab={activeTab} setActiveTab={setActiveTab}/>

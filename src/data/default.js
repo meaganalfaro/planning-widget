@@ -29,3 +29,31 @@ export const defaultPhases = [
     }
 
 ]
+
+export const defaultBuckets = [
+    {
+        id: 'courses',
+        name: 'masters courses',
+        items: ['<item1>', '<item2>', '<item3>']
+    },
+    {
+        id: 'interviews',
+        name: 'technical interviews',
+        items: ['<item1>', '<item2>', '<item3>']
+    },
+    {
+        id: 'projects',
+        name: 'projects',
+        items: ['<item1>', '<item2>', '<item3>']
+    },
+    {
+        id: 'applications',
+        name: 'job applications',
+        items: ['<item1>', '<item2>', '<item3>']
+    },
+    {
+        id: 'fun',
+        name: 'fun stuff',
+        items: ['<item1>', '<item2>', '<item3>']
+    },
+]

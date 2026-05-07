@@ -5,18 +5,20 @@ const monthCardStyle = {
     margin: '0.5rem',
     padding: '0.5rem 1rem',
     borderRadius: '20px',
-    border: 'var(--secondary) solid 5px',
+    border: 'var(--design) solid 5px',
     cursor: 'pointer',
+    background: 'var(--secondary)',
 }
 
 const InfoCard = {
     margin: '0.5rem',
     padding: '0.5rem 1rem',
     borderRadius: '20px',
-    border: 'var(--secondary) solid 5px',
+    border: 'var(--design) solid 5px',
     display: 'flex',
     flexDirection: 'column',
     textAlign:'left',
+    background: 'var(--secondary)',
 }
 
 export default function PhasesTab() {
@@ -37,7 +39,7 @@ export default function PhasesTab() {
                             height: 0,
                             borderStyle: 'solid',
                             borderWidth: '0 30px 30px 0',
-                            borderColor: `transparent var(--secondary) transparent transparent`,
+                            borderColor: `transparent var(--design) transparent transparent`,
                             borderRadius: '0 3px  0',
                         }} />
                         <p style={{textAlign:'left', color:'var(--letters)'}}>{phase.name}</p>
@@ -63,7 +65,7 @@ export default function PhasesTab() {
             <div style={InfoCard}>
                 <p style={{color: 'var(--title)'}} >{selectedPhase.name}</p>
                     {selectedPhase.items.map((item, index) => (
-                        <p style={{color: 'var(--letters)'}} key={index}>{item}</p>
+                        <p style={{color: 'var(--letters)'}} key={index}>{"⋆ " + item}</p>
                     ))}
             </div>
 

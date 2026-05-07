@@ -4,11 +4,12 @@ import WindowChrome from './components/WindowChrome';
 import TabBar from './components/TabBar';
 import { useState } from 'react';
 import PhasesTab from './components/tabs/PhasesTab';
+import BucketsTab from './components/tabs/BucketsTab';
 
 export default function App() {
   const [plan, setPlan] = useLocalStorage('plan', {}); // change back to null later, just for testing purposes
   const [apiKey, setApiKey] = useLocalStorage('apiKey', null);
-  const [themeName, setThemeName] = useLocalStorage('theme', 'cool');
+  const [themeName, setThemeName] = useLocalStorage('theme', 'dark');
   const [activeTab, setActiveTab] = useState('phases');
   const theme = themes[themeName];
 
@@ -23,7 +24,7 @@ export default function App() {
 
   const tabComponents = {
     phases: <PhasesTab />,
-    buckets: <p style={{ color: 'var(--letters)' }}>buckets coming soon</p>,
+    buckets: <BucketsTab />,
     week: <p style={{ color: 'var(--letters)' }}>week coming soon</p>,
     calendar: <p style={{ color: 'var(--letters)' }}>calendar coming soon</p>,
   };
@@ -42,9 +43,9 @@ export default function App() {
       ...themeVars,
       background: 'var(--primary)',
       minHeight: '100vh',
-      backgroundImage: `radial-gradient(circle, var(--design) 1.5px, transparent 1.5px)`,
+      backgroundImage: `radial-gradient(circle, var(--design) 2px, transparent 2px)`,
       backgroundSize: '35px 35px',
-      borderRadius: '30px 30x 0 0'
+      borderRadius: '20px 20x 0 0'
   }}>
       {/* planner widget goes here later */}
       <WindowChrome title="planner ⋅˚₊‧ ୨୧ ‧₊˚ ⋅"/>

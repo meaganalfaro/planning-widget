@@ -36,6 +36,19 @@ export const themes = {
         letters: '#000',
         title: '#302e21',
         design: '#fbf8e4'
-    }
-
+    },
 }
+
+export const taskColoring = {
+    one:   '#fbf8cc', 
+    two:   '#f4c59f',  
+    three: '#fdaab0', 
+    four:  '#f1c0e8',  
+    five:  '#c7acf1',  
+    six:   '#a3c4f3',  
+    seven: '#90dbf4',  
+    eight: '#8eecf5',  
+    nine:  '#98f5e1',  
+    ten:   '#b9fbc0',  
+}
+

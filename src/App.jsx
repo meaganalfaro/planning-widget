@@ -1,15 +1,16 @@
 import { useLocalStorage } from './hooks/useLocalStorage';
-import { themes } from './themes/themes';
+import { themes, taskColoring} from './themes/themes';
 import WindowChrome from './components/WindowChrome';
 import TabBar from './components/TabBar';
 import { useState } from 'react';
 import PhasesTab from './components/tabs/PhasesTab';
 import BucketsTab from './components/tabs/BucketsTab';
+import WeekTab from './components/tabs/WeekTab';
 
 export default function App() {
   const [plan, setPlan] = useLocalStorage('plan', {}); // change back to null later, just for testing purposes
   const [apiKey, setApiKey] = useLocalStorage('apiKey', null);
-  const [themeName, setThemeName] = useLocalStorage('theme', 'dark');
+  const [themeName, setThemeName] = useLocalStorage('theme', 'light');
   const [activeTab, setActiveTab] = useState('phases');
   const theme = themes[themeName];
 
@@ -20,12 +21,22 @@ export default function App() {
     '--letters': theme.letters,
     '--title': theme.title,
     '--design': theme.design,
+    '--one': taskColoring.one, 
+    '--two': taskColoring.two,
+    '--three': taskColoring.three,
+    '--four': taskColoring.four,
+    '--five': taskColoring.five,
+    '--six': taskColoring.six,
+    '--seven': taskColoring.seven,
+    '--eight': taskColoring.eight,
+    '--nine': taskColoring.nine,
+    '--ten': taskColoring.ten
   };
 
   const tabComponents = {
     phases: <PhasesTab />,
     buckets: <BucketsTab />,
-    week: <p style={{ color: 'var(--letters)' }}>week coming soon</p>,
+    week: <WeekTab />,
     calendar: <p style={{ color: 'var(--letters)' }}>calendar coming soon</p>,
   };
 

@@ -57,3 +57,12 @@ export const defaultBuckets = [
         items: ['<item1>', '<item2>', '<item3>']
     },
 ]
+
+export const defaultWeek = {
+        monday:    { morning: 'study', midday: 'work', afternoon: 'work', evening: 'read' },
+        tuesday:   { morning: 'sleep', midday: 'study', afternoon: 'game', evening: 'party' },
+        wednesday: { morning: 'class', midday: 'party', afternoon: 'code', evening: 'read' },
+        thursday:  { morning: 'read', midday: 'slay', afternoon: 'work', evening: 'eat' },
+        friday:    { morning: 'eat', midday: 'slay', afternoon: 'game', evening: 'party' },
+        weekend:   { morning: 'study', midday: 'work', afternoon: 'work', evening: 'read' },
+};

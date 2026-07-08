@@ -19,6 +19,12 @@ A kawaii-themed, AI-powered productivity widget for planning your goals — buil
 
 ---
 
+## 📐 Product Specification
+
+This project is built around a detailed product spec that covers the problem statement, feature designs, and technical decisions behind each component.
+
+→ [Read the full product spec](./PRODUCT_SPEC.md)
+
 ## 🛠 Tech Stack
 
 | Layer | Tool |
@@ -101,10 +107,10 @@ src/
 
 | Theme | Background | Accent | Vibe |
 |---|---|---|---|
-| Light | Butter yellow `#F7F5DC` | Pink `#FFB3D9` | Soft and warm |
-| Dark | Chocolate `#1C0C05` | Pink `#FFB3D9` | Cozy night mode |
-| Cool | Baby blue `#D6F0FA` | Lavender `#C8A8E8` | Calm and focused |
-| Warm | Blush pink `#FFD6EC` | Cream `#EDEAA0` | Bright and cheerful |
+| Light | Pink `#ff92c4`    | Yellow `#f2e8a8` | Soft and warm      |
+| Dark  | Brown `#361800`   | Blue `#b5e6f0`   | Cozy night mode    |
+| Cool  | Blue `#b5e6f0`    | Pink `#ff92c4`   | Calm and focused   |
+| Warm  | Yellow `#f2e8a8`  | Pink `#ff92c4`   | Bright and cheerful|
 
 ---
 
@@ -136,17 +142,19 @@ Works in Notion, personal sites, GitHub Pages, anywhere that supports iframes.
 ## 🗺 Roadmap
 
 - [x] Project scaffold + folder structure
-- [ ] Theme system with CSS custom properties
-- [ ] `useLocalStorage` hook
+- [x] Theme system with CSS custom properties
+- [x] useLocalStorage hook
+- [x] Phases tab
+- [x] Buckets tab with inline editing + add items
+- [x] Week tab with color-coded events + add event modal
+- [ ] Calendar tab
 - [ ] Onboarding multi-step form
 - [ ] PDF upload + base64 conversion
 - [ ] Claude API integration (BYOK)
-- [ ] Phases, Buckets, Week tabs
-- [ ] Calendar tab with deadline extraction
-- [ ] Conflict detection (overlapping deadlines + prep weeks)
-- [ ] "Copy embed code" button inside widget
+- [ ] Reward + completion system
+- [ ] Collapsed widget view
 - [ ] Übersicht desktop widget config
-- [ ] Native macOS WidgetKit version (stretch)
+- [ ] Native macOS WidgetKit (stretch)
 
 ---
 
